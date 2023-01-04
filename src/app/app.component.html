@@ -1,12 +1,38 @@
-<section class="container">
-    <section class="bg-body-secondary d-flex justify-content-between align-items-center">
-        <section>
-            <ul id="abc" class="m-0 p-0 d-flex align-items-center">
-                <li class="mx-2"> Option 1</li>
-                <li class="mx-2"> Option 2</li>
-                <li class="mx-2"> Option 3</li>
-            </ul>
-        </section>
-        <section class="fs-6"> Help Line: +91-234-456-7892</section>
-    </section>
-</section>
+<!-- <section class="container">
+    <app-help-line></app-help-line>
+    <app-header></app-header>
+    <app-footer></app-footer>
+</section>  -->
+
+<app-help-line></app-help-line>
+<app-help-line></app-help-line>
+<app-help-line></app-help-line>
+<app-help-line></app-help-line>
+<app-help-line></app-help-line>
+<app-help-line></app-help-line>
+
+<app-button></app-button>
+<app-button></app-button>
+<app-button></app-button>
+<app-button></app-button>
+<app-button></app-button>
+<app-button></app-button>
+
+<button class="btn btn-primary"> {{title}} </button>
+<button class="btn btn-primary"> {{showMe}} </button>
+
+
+<p> X Value is: {{x}}</p>
+<p> X Value is: {{x * 2}}</p>
+<p> X Value is: {{x - y}}</p>
+<p> X Value is: {{y - x}}</p>
+
+<p> IS a Student: {{isStudent}}</p>
+
+{{student | json}}
+
+<p> Student No: {{student.sNo}}</p>
+<p> Student Name: {{student.name}}</p>
+<p> Student address: {{student.address}}</p>
+<p> Student Moobile: {{student?.mobile}}</p>
+
