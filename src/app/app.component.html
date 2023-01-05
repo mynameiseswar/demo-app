@@ -4,35 +4,19 @@
     <app-footer></app-footer>
 </section>  -->
 
-<app-help-line></app-help-line>
-<app-help-line></app-help-line>
-<app-help-line></app-help-line>
-<app-help-line></app-help-line>
-<app-help-line></app-help-line>
-<app-help-line></app-help-line>
-
-<app-button></app-button>
-<app-button></app-button>
-<app-button></app-button>
-<app-button></app-button>
-<app-button></app-button>
-<app-button></app-button>
-
-<button class="btn btn-primary"> {{title}} </button>
-<button class="btn btn-primary"> {{showMe}} </button>
 
 
-<p> X Value is: {{x}}</p>
-<p> X Value is: {{x * 2}}</p>
-<p> X Value is: {{x - y}}</p>
-<p> X Value is: {{y - x}}</p>
 
-<p> IS a Student: {{isStudent}}</p>
+<p> Name:  {{student.name}}</p> 
+<p> Address:  {{student.address}}</p> 
+<p> Mobile:  {{student.mobile}}</p> 
+<p> Is Student:  {{student.isStudent}}</p> 
 
-{{student | json}}
 
-<p> Student No: {{student.sNo}}</p>
-<p> Student Name: {{student.name}}</p>
-<p> Student address: {{student.address}}</p>
-<p> Student Moobile: {{student?.mobile}}</p>
+{{abc6 | json}}
 
+
+<p *ngFor="let student of abc6">
+    {{student.name}}
+    {{student.age}}
+</p>
