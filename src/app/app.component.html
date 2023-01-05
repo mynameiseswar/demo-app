@@ -6,17 +6,22 @@
 
 
 
+<p> X Value : {{x}}</p>
+<p> Y Value : {{y}}</p>
 
-<p> Name:  {{student.name}}</p> 
-<p> Address:  {{student.address}}</p> 
-<p> Mobile:  {{student.mobile}}</p> 
-<p> Is Student:  {{student.isStudent}}</p> 
+<button type="button" class="btn btn-primary" (click)="sum()"> Sum </button>
+<button type="button" class="btn btn-success ms-2" (click)="multi()"> Multi </button>
+<button type="button" class="btn btn-info ms-2" (click)="sub()"> Sub </button>
+<button type="button" class="btn btn-danger ms-2" (click)="mod()"> Mod </button>
+<br/>
+------------------------
+<p> Sum : {{c}}</p>
+
+<button type="button" class="btn btn-primary" (click)="showBox()"> Show</button>
+<button type="btton" class="btn btn-danger ms-2" (click)="hideBox()"> Hide </button>
+
+<button type="button" class="btn btn-primary ms-2"> Show/Hide</button>
 
 
-{{abc6 | json}}
+<div class="box" *ngIf="boxStatus"></div>
 
-
-<p *ngFor="let student of abc6">
-    {{student.name}}
-    {{student.age}}
-</p>
