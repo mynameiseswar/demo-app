@@ -20,8 +20,8 @@
 <button type="button" class="btn btn-primary" (click)="showBox()"> Show</button>
 <button type="btton" class="btn btn-danger ms-2" (click)="hideBox()"> Hide </button>
 
-<button type="button" class="btn btn-primary ms-2"> Show/Hide</button>
+<button type="button" class="btn btn-primary ms-2" (click)="updateBoxStatus()"> Show/Hide</button>
 
 
-<div class="box" *ngIf="boxStatus"></div>
+<div class="box" id="box1" *ngIf="boxStatus"></div>
 
