@@ -4,24 +4,20 @@
     <app-footer></app-footer>
 </section>  -->
 
+<!-- {{studentList | json}} -->
+
+<!-- <p> Studnet Name Is: {{studentList[0].name}} </p>
+<p> Studnet Name Is: {{studentList[1].name}} </p>
+<p> Studnet Name Is: {{studentList[2].name}} </p>
+<p> Studnet Name Is: {{studentList[3].name}} </p>
+<p> Studnet Name Is: {{studentList[4].name}} </p> -->
+<!-- 
+<p *ngFor="let student of studentList"> Student Name is : {{student.name}} </p> -->
+
+<app-button [buttonTitle]="'Show'" (onButtonClick)="onButtonAction($event)" [buttonClassName]="'btn-primary'"></app-button>
+<app-button [buttonTitle]="'Hide'" (onButtonClick)="onButtonAction($event)" [buttonClassName]="'btn-danger'"></app-button>
+<app-button [buttonTitle]="'Show/Hide'" (onButtonClick)="onButtonAction($event)" [buttonClassName]="'btn-info'"></app-button>
 
 
-<p> X Value : {{x}}</p>
-<p> Y Value : {{y}}</p>
 
-<button type="button" class="btn btn-primary" (click)="sum()"> Sum </button>
-<button type="button" class="btn btn-success ms-2" (click)="multi()"> Multi </button>
-<button type="button" class="btn btn-info ms-2" (click)="sub()"> Sub </button>
-<button type="button" class="btn btn-danger ms-2" (click)="mod()"> Mod </button>
-<br/>
-------------------------
-<p> Sum : {{c}}</p>
-
-<button type="button" class="btn btn-primary" (click)="showBox()"> Show</button>
-<button type="btton" class="btn btn-danger ms-2" (click)="hideBox()"> Hide </button>
-
-<button type="button" class="btn btn-primary ms-2" (click)="updateBoxStatus()"> Show/Hide</button>
-
-
-<div class="box" id="box1" *ngIf="boxStatus"></div>
-
+<section class="box" *ngIf="boxStatus"></section>

@@ -18,74 +18,88 @@ export interface StudentObject{
 })
 export class AppComponent {
 
+  boxStatus: boolean = true;
 
-Student1: Array<Student> = [
-  {
-    name: 'Raju',
-    age: 20,
-    address: 'Hyd'
-  },
-  {
-    name: 'Siva',
-    age: 24,
-    address:'Vizag'
+  onButtonAction(event: string){
+    console.log(event);
 
+    if(event.toLocaleLowerCase() == 'show'){
+        this.boxStatus = true;
+    }else if(event.toLocaleLowerCase() == 'hide'){
+      this.boxStatus = false;
+    }else if(event.toLocaleLowerCase() == 'show/hide'){
+      this.boxStatus = !this.boxStatus;
+    }
   }
-]
 
 
-  
+  // showButton="Show";
 
-studnet: Student | undefined;
+  // String
+  // number
+  // Boolean
+  // Array
+  // Object -
+  // Custome Data type
 
-x = 20;
-y = 30;
+    studentList: Array<any> = [
+      {
+        name:'Raju'
+      },
+      {
+        name:'Siva'
+      },
+      {
+        name:'Anil'
+      },
+      {
+        name:'Phani'
+      },
+      {
+        name:'Venkat'
+      },
+      {
+        name:'Raju'
+      },
+      {
+        name:'Siva'
+      },
+      {
+        name:'Anil'
+      },
+      {
+        name:'Phani'
+      },
+      {
+        name:'Venkat'
+      },
+      {
+        name:'Raju'
+      },
+      {
+        name:'Siva'
+      },
+      {
+        name:'Anil'
+      },
+      {
+        name:'Phani'
+      },
+      {
+        name:'Venkat'
+      },
+    ]
 
-c: number | undefined;
+
+    constructor(){
+      /* for(
+        let i=0;i< this.studentList.length;i++
+      ){
+        console.log(this.studentList[i].name)
+      } */
+    }
 
 
-boxStatus: boolean = true;
-
-constructor(){
-
-}
-
-sum(){
-  console.log("Sum Calculation init")
-  this.c = this.x + this.y;
-}
-
-multi(){
-this.c = this.x * this.y;
-}
-
-sub(){
-  this.c = this.x - this.y;
-}
-mod(){
-  this.c = this.x % this.y;
-}
-
-showBox(){
-  this.boxStatus = true;
-}
-hideBox(){
-  this.boxStatus = false;
-}
-
-updateBoxStatus(){
-  console.log(this.boxStatus);
-  // this.boxStatus = false;
-  // if(this.boxStatus === true){
-  //   this.boxStatus = false;
-  // }else{
-  //   this.boxStatus = true;
-  // }
-
-  this.boxStatus = this.boxStatus == true ? false : true;
-
-  //this.boxStatus = !this.boxStatus;
-}
 
 
 }
