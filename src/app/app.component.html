@@ -14,10 +14,24 @@
 <!-- 
 <p *ngFor="let student of studentList"> Student Name is : {{student.name}} </p> -->
 
-<app-button [buttonTitle]="'Show'" (onButtonClick)="onButtonAction($event)" [buttonClassName]="'btn-primary'"></app-button>
+<!-- <app-button [buttonTitle]="'Show'"  (onButtonClick)="onButtonAction($event)" [buttonClassName]="'btn-primary'"></app-button>
 <app-button [buttonTitle]="'Hide'" (onButtonClick)="onButtonAction($event)" [buttonClassName]="'btn-danger'"></app-button>
 <app-button [buttonTitle]="'Show/Hide'" (onButtonClick)="onButtonAction($event)" [buttonClassName]="'btn-info'"></app-button>
 
+<app-button [buttonTitle]="'HYD'" (onButtonClick)="onButtonAction($event)" ></app-button>
+ -->
 
 
-<section class="box" *ngIf="boxStatus"></section>
+<!-- <section class="box" *ngIf="boxStatus"></section> -->
+
+<app-button *ngFor="let student of studentList" [buttonObject]="student" (onButtonClick)="onStudentClick($event)" [buttonClassName]="'btn-primary'"></app-button>
+
+<br/>
+------------------------------------------------------------------------------------------
+
+<h2> Selected Student Details</h2>
+
+<p> Name:  {{selectedSudent?.name}}</p>
+<p> Address: {{selectedSudent?.age}}</p>
+<p> Age: {{selectedSudent?.address}}</p>
+<p> Mobile: {{selectedSudent?.mobile}} </p>
