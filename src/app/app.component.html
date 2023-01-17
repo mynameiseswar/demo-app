@@ -1,61 +1,9 @@
-<!-- <section class="container">
-    <app-help-line></app-help-line>
-    <app-header></app-header>
-    <app-footer></app-footer>
-</section>  -->
 
-<!-- {{studentList | json}} -->
-
-<!-- <p> Studnet Name Is: {{studentList[0].name}} </p>
-<p> Studnet Name Is: {{studentList[1].name}} </p>
-<p> Studnet Name Is: {{studentList[2].name}} </p>
-<p> Studnet Name Is: {{studentList[3].name}} </p>
-<p> Studnet Name Is: {{studentList[4].name}} </p> -->
-<!-- 
-<p *ngFor="let student of studentList"> Student Name is : {{student.name}} </p> -->
-
-<!-- <app-button [buttonTitle]="'Show'"  (onButtonClick)="onButtonAction($event)" [buttonClassName]="'P'"></app-button>
-<app-button [buttonTitle]="'Hide'" (onButtonClick)="onButtonAction($event)" [buttonClassName]="'D'"></app-button>
-<app-button [buttonTitle]="'Show/Hide'" (onButtonClick)="onButtonAction($event)" [buttonClassName]="'I'"></app-button>
-
-<app-button [buttonTitle]="'HYD'" (onButtonClick)="onButtonAction($event)" ></app-button>
- -->
-
-
-<!-- <section class="box" *ngIf="boxStatus"></section> -->
-
-<!-- <app-button *ngFor="let student of studentList" [buttonObject]="student" (onButtonClick)="onStudentClick($event)" [buttonClassName]="'btn-primary'"></app-button> -->
-
-<!-- <span *ngFor="let student of studentList;"> 
-    <app-button [buttonTitle]="student.name"  (onButtonClick)="onStudentClickOption2($event)" ></app-button>
-</span> 
-
-
-<br/>
-------------------------------------------------------------------------------------------
-
-<h2> Selected Student Details</h2>
-
-<p> Name:  {{selectedSudent?.name}}</p>
-<p> Address: {{selectedSudent?.age}}</p>
-<p> Age: {{selectedSudent?.address}}</p>
-<p> Mobile: {{selectedSudent?.mobile}} </p> -->
-
-
-
-
-<span *ngFor="let student of studentList;let abc = index"> 
-    <app-button [buttonTitle]="student.name" [buttonId]="abc" [buttonClassName]="'k'"    (onButtonClick)="onStudentClickOption2($event)" ></app-button>
-</span>
-
-------------------------------------------------------------------------------------------
-
-<h2> Selected Student Details</h2>
-
-<p> Name:  {{selectedSudent?.name}}</p>
-<p> Address: {{selectedSudent?.age}}</p>
-<p> Age: {{selectedSudent?.address}}</p>
-<p> Mobile: {{selectedSudent?.mobile}} </p> 
-
-
-<app-button [buttonTitle]="'ABC'" [buttonClassName]="'k'"    (onButtonClick)="onStudentClickOption2($event)" ></app-button>
+<section class="container">
+    <app-button [buttonTitle]="'Save'" [buttonId]="1001" [buttonStyleClass]="'p'" (onButtonClick)="buttonClick($event)"></app-button>
+    <app-button [buttonTitle]="'Save'" [buttonId]="1002" [buttonStyleClass]="'i'" (onButtonClick)="buttonClick($event)"></app-button>
+    <app-button [buttonTitle]="'Delete'" (onButtonClick)="buttonClick($event)"></app-button>
+    <app-button [buttonTitle]="'Login'" [buttonStyleClass]="'s'" (onButtonClick)="buttonClick($event)"></app-button>
+    <app-button [buttonTitle]="'More'" [buttonStyleClass]="'I'" (onButtonClick)="buttonClick($event)"></app-button>
+    
+</section>
