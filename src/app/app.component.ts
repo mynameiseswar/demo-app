@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ButtonSendObject } from './app-button/ButtonSendObject';
 import { Student } from './utils/Student';
 
 
@@ -23,36 +24,42 @@ export class AppComponent {
   selectedSudent: Student | undefined;
   studentList: Array<Student> = [
     {
+      id: 1001,
       name: "Raju",
       age: 18,
       address: 'GNT',
       mobile: '+91-234-567-820'
     },
     {
+      id: 1002,
       name: "Raju",
       age: 30,
       address: 'Hyd',
       mobile: '+91-234-567-890'
     },
     {
+      id: 1003,
       name: "Siva",
       age: 34,
       address: 'Hyd',
       mobile: '+91-234-567-890'
     },
     {
+      id: 1004,
       name: "Phani",
       age: 24,
       address: 'Vizag',
       mobile: '+91-234-567-890'
     },
     {
+      id: 1005,
       name: "Venkat",
       age: 30,
       address: 'Del',
       mobile: '+91-224-567-890'
     },
     {
+      id: 1006,
       name: "Naga",
       age: 25,
       address: 'Del',
@@ -87,14 +94,18 @@ export class AppComponent {
   }
 
 
-  onStudentClickOption2(studentName: string){
-    console.log(studentName);
+  onStudentClickOption2(buttonObj: ButtonSendObject){
+    console.log(buttonObj);
 
-    this.studentList.forEach((student)=>{
-        if(student.name == studentName){
+    console.log(this.studentList)
+
+    this.selectedSudent = this.studentList[buttonObj.buttonId || 0];
+
+   /*  this.studentList.forEach((student)=>{
+        if(student.id == buttonObj.buttonId ){
           this.selectedSudent = student;
         }
-    });
+    }); */
   }
 
   // showButton="Show";

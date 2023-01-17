@@ -1,5 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Student } from '../utils/Student';
+import { ButtonSendObject } from './ButtonSendObject';
+
+
 
 @Component({
   selector: 'app-button',
@@ -11,6 +14,7 @@ export class AppButtonComponent {
   buttonClassName: string |undefined;
 
   @Input() buttonTitle: string  = 'Click Me' ;
+  @Input() buttonId?: number | undefined;
 
   // @Input() buttonObject: Student | undefined;
 
@@ -24,8 +28,13 @@ export class AppButtonComponent {
 
   
   onClick(){
-    console.log("Button Click");
-    this.onButtonClick.emit(this.buttonTitle);
+
+    let sendObject: ButtonSendObject = {
+      buttonTitle: this.buttonTitle,
+      buttonId: this.buttonId
+    }
+ 
+    this.onButtonClick.emit(sendObject);
 
     // this.onButtonClick.emit(this.buttonObject);
   }

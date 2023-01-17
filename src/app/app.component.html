@@ -44,6 +44,18 @@
 
 
 
-<span *ngFor="let student of studentList;"> 
-    <app-button [buttonTitle]="student.name" [buttonClassName]="'k'"   (onButtonClick)="onStudentClickOption2($event)" ></app-button>
+<span *ngFor="let student of studentList;let abc = index"> 
+    <app-button [buttonTitle]="student.name" [buttonId]="abc" [buttonClassName]="'k'"    (onButtonClick)="onStudentClickOption2($event)" ></app-button>
 </span>
+
+------------------------------------------------------------------------------------------
+
+<h2> Selected Student Details</h2>
+
+<p> Name:  {{selectedSudent?.name}}</p>
+<p> Address: {{selectedSudent?.age}}</p>
+<p> Age: {{selectedSudent?.address}}</p>
+<p> Mobile: {{selectedSudent?.mobile}} </p> 
+
+
+<app-button [buttonTitle]="'ABC'" [buttonClassName]="'k'"    (onButtonClick)="onStudentClickOption2($event)" ></app-button>
