@@ -1,5 +1,7 @@
 
 
-<button class="btn {{className}} m-2" (click)="onClick()"> {{buttonObject?.name}}  </button>
+<button class="btn m-2" [ngStyle]="{'font-size': '54px'}" [ngClass]="getClassName(className)" (click)="onClick()"> {{buttonTitle}}  </button>
+<br/>
+<!-- [ngClass]="className" -->
 
-
+<!-- <button class="btn m-2" [ngStyle]="{'font-size': '54px'}" [ngClass]="className.toLocaleLowerCase() == 'd' ? 'btn-danger' : 'btn-primary' " (click)="onClick()"> {{buttonTitle}}  </button> -->

@@ -10,16 +10,9 @@ export class AppButtonComponent {
 
   buttonClassName: string |undefined;
 
-  // @Input() buttonTitle: string  = 'Click Me' ;
+  @Input() buttonTitle: string  = 'Click Me' ;
 
-  /* @Input() buttonObject: Student  = {
-    name: '',
-    age: 0,
-    address: '',
-    mobile: ''
-  }; */
-
-  @Input() buttonObject: Student | undefined;
+  // @Input() buttonObject: Student | undefined;
 
   // @Input() buttonClassName: string | undefined;
 
@@ -32,9 +25,37 @@ export class AppButtonComponent {
   
   onClick(){
     console.log("Button Click");
-    // this.onButtonClick.emit(this.buttonTitle);
+    this.onButtonClick.emit(this.buttonTitle);
 
-    this.onButtonClick.emit(this.buttonObject);
+    // this.onButtonClick.emit(this.buttonObject);
+  }
+
+  getClassName(name: string): string{
+    let className: string;
+
+
+    /* if(name.toLocaleLowerCase() == 'd'){
+      className = 'btn-succes';
+    }else if(name.toLocaleLowerCase() == 'p'){
+      className = 'btn-danger';
+    } */
+
+    switch (name.toLowerCase()){
+      case 'd':
+        className = 'btn-primary';
+        break;
+      case 'p':
+        className = 'btn-danger';
+        break;
+      case 'k':
+          className = 'btn-warning';
+      break;
+      default:
+        className = 'btn-primary';
+      break;
+    }
+
+    return className;
   }
 
 }

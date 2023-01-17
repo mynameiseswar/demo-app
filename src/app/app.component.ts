@@ -24,6 +24,12 @@ export class AppComponent {
   studentList: Array<Student> = [
     {
       name: "Raju",
+      age: 18,
+      address: 'GNT',
+      mobile: '+91-234-567-820'
+    },
+    {
+      name: "Raju",
       age: 30,
       address: 'Hyd',
       mobile: '+91-234-567-890'
@@ -80,6 +86,16 @@ export class AppComponent {
     this.selectedSudent = student;
   }
 
+
+  onStudentClickOption2(studentName: string){
+    console.log(studentName);
+
+    this.studentList.forEach((student)=>{
+        if(student.name == studentName){
+          this.selectedSudent = student;
+        }
+    });
+  }
 
   // showButton="Show";
 
