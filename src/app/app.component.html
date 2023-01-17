@@ -1,9 +1,20 @@
 
 <section class="container">
-    <app-button [buttonTitle]="'Save'" [buttonId]="1001" [buttonStyleClass]="'p'" (onButtonClick)="buttonClick($event)"></app-button>
+    <app-button [buttonTitle]="'Studnet-20-HYD'" [buttonId]="1001" [buttonStyleClass]="'p'" (onButtonClick)="buttonClick($event)"></app-button>
     <app-button [buttonTitle]="'Save'" [buttonId]="1002" [buttonStyleClass]="'i'" (onButtonClick)="buttonClick($event)"></app-button>
     <app-button [buttonTitle]="'Delete'" (onButtonClick)="buttonClick($event)"></app-button>
     <app-button [buttonTitle]="'Login'" [buttonStyleClass]="'s'" (onButtonClick)="buttonClick($event)"></app-button>
     <app-button [buttonTitle]="'More'" [buttonStyleClass]="'I'" (onButtonClick)="buttonClick($event)"></app-button>
     
+
+    <h6>Studnet Information</h6>
+    --------------------------------------------
+    <p> RollNo: {{selectedStudentInformation.rollId}} </p>
+    <p> Name: {{selectedStudentInformation.name}}</p>
+    <p> Age: {{selectedStudentInformation.age}} </p>
+    <p class="text-success"> Location: {{selectedStudentInformation.location}} </p>
+    <p> Class & Section: {{selectedStudentInformation.class}} - {{selectedStudentInformation.section}}</p>
+    <p> Mobile:  {{selectedStudentInformation.mobile}}</p>
 </section>
+
+
