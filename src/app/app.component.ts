@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ButtonEmitObject } from './shared/button/button.component';
 @Component({
   selector: 'app-root',
@@ -7,81 +8,55 @@ import { ButtonEmitObject } from './shared/button/button.component';
 })
 export class AppComponent {
 
+  seletedpage: string = 'dashboard';
 
-  studetnList: Array<any> = [
+  menuList: any = [
     {
-      rollId: 1001,
-      name: 'Raju',
-      age: 12,
-      location: 'Hyd', 
-      class: 'IV',
-      section: "B",
-      mobile: '+91-987654321' 
+      title: 'Dashboard',
+      url:'dashboard'
     },
     {
-      rollId: 1002,
-      name: 'Venkat',
-      age: 11,
-      location: 'Vizag', 
-      class: 'V',
-      section: "A",
-      mobile: '+91-987624321' 
+      title: 'Product List',
+      url: 'product-list'
     },
     {
-      rollId: 1003,
-      name: 'Siva',
-      age: 13,
-      location: 'Del', 
-      class: 'VI',
-      section: "C",
-      mobile: '+91-987621321' 
+      title: 'Users List',
+      url: 'users-list'
+    },
+    {
+      title: 'Settings',
+      url:'settings'
     }
-  ]
+  ];
 
-  onShowStudentDetails: boolean = false;
+  constructor(
+    private router: Router
+  ){}
 
-  /*
-    Hyd - text-danger
-    Vizag - text-success
-    Del - text-Info
-   */
+  onMenuClick(selectedMenu: any){
 
-  selectedStudentInformation: any = {
-    rollId: 1001,
-    name: 'Raju',
-    age: 12,
-    location: 'Hyd', // "Vizag" , "DEL" 
-    class: 'IV',
-    section: "B",
-    mobile: '+91-987654321' // optional
-  }
-    constructor(){}
+    console.log(selectedMenu);
 
-    buttonClick(event: ButtonEmitObject){
-      console.log(event);
-      
-      switch(event.id){
-        case 1001:
-          console.log('Do Save action 1')
-          break;
-        case 1002:
-          console.log('Do Save action 2')
-          break;
-        default:
-          console.log(`Do ${event.title} action`)
-          break;
-      }
+    this.router.navigate([`/${selectedMenu.url}`])
 
-      /* switch(event.toLowerCase()){
-        case 'save':
-            console.log('Do Save action1')
-          break;
-        case 'save':
-       console.log('Do Save action1')
+    // this.seletedpage = selectedMenu.toLowerCase();
+
+    /* if(selectedMenu.toLocaleLowerCase() === 'dashboard'){
+      this.router.navigate(['/dashboard']);
+    }else if(selectedMenu.toLocaleLowerCase() === 'product list'){
+      this.router.navigate(['/product-list']);
+    } */
+
+  
+
+    /* switch(selectedMenu.toLocaleLowerCase()){
+      case ('dashboard'):
+        this.router.navigate(['/dashboard']);
         break;
-        case 'delete':
-          console.log('Do Delete action')
-          break;
-      }*/
-    } 
+      case ('product list'):
+        this.router.navigate(['/product-list']);
+        break;
+    } */
+
+  }
 }
