@@ -38,6 +38,8 @@ export class AppComponent {
     }
   ]
 
+  onShowStudentDetails: boolean = false;
+
   /*
     Hyd - text-danger
     Vizag - text-success
@@ -57,7 +59,7 @@ export class AppComponent {
 
     buttonClick(event: ButtonEmitObject){
       console.log(event);
-
+      
       switch(event.id){
         case 1001:
           console.log('Do Save action 1')
