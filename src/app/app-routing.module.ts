@@ -1,26 +1,27 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { ProductsListComponent } from './pages/products-list/products-list.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { UsersListComponent } from './pages/users-list/users-list.component';
 
 const routes: Routes = [
   {
     path: 'dashboard',
-    component: DashboardComponent
+    loadChildren: () => import('./pages/dashboard/dashboard.module').then(m => m.DashboardModule)
   },
   {
     path: 'product-list',
-    component: ProductsListComponent
+    // component: ProductsListComponent
+    loadChildren: () => import('./pages/products-list/products-list.module').then(m => m.ProductsListModule)
   },
   {
     path: 'users-list',
-    component: UsersListComponent
+    // component: UsersListComponent
+    loadChildren: () => import('./pages/users-list/users-list.module').then(m=> m.UsersListModule)
   },
   {
     path: 'settings',
-    component: SettingsComponent
+    // component: SettingsComponent
+    loadChildren: () => import('./pages/settings/settings.module').then(m => m.SettingsModule)
   }
 ];
 
