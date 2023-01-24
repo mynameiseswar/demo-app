@@ -24,6 +24,10 @@ export class AppComponent {
       url: 'users-list'
     },
     {
+      title: 'Students List',
+      url: 'students-list'
+    },
+    {
       title: 'Settings',
       url:'settings'
     }

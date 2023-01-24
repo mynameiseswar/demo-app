@@ -22,6 +22,10 @@ const routes: Routes = [
     path: 'settings',
     // component: SettingsComponent
     loadChildren: () => import('./pages/settings/settings.module').then(m => m.SettingsModule)
+  },
+  {
+    path: 'students-list',
+    loadChildren: () => import('./pages/studetns-list/studetns-list.module').then(m => m.StudetnsListModule)
   }
 ];
 
