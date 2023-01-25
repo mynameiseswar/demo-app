@@ -1,1 +1,20 @@
-<p>dashboard works!</p>
+
+<h3> Pipe's </h3>
+
+<p> RollNo: {{sudentList.id}} </p>
+<p> Name: {{sudentList.name | lowercase}}</p>
+<p> Address: {{sudentList.address | uppercase}} </p>
+
+
+
+Currency 
+
+<p> Fee: {{sudentList.fee | currency: 'EUR'}}</p>
+
+
+<p> {{sudentList.fee |  number:'0.0-6'}}</p>
+
+<p> {{ getStudnetPercentage(sudentList.percentage) |  percent}}</p>
+
+<p> {{ loginTime}}</p>
+<p> {{ loginTime | date: 'short'}}</p>

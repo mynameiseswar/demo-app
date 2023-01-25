@@ -6,7 +6,8 @@ import { StudetnsListService } from '../studetns-list.service';
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss']
+  styleUrls: ['./list.component.scss'],
+  // providers: [StudetnsListService]
 })
 export class ListComponent {
 

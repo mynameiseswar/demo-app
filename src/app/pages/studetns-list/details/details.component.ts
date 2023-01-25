@@ -6,7 +6,8 @@ import { StudetnsListService } from '../studetns-list.service';
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
-  styleUrls: ['./details.component.scss']
+  styleUrls: ['./details.component.scss'],
+  // providers: [StudetnsListService]
 })
 export class DetailsComponent implements OnInit {
 
@@ -17,7 +18,9 @@ export class DetailsComponent implements OnInit {
   ){}
 
   ngOnInit(): void {
-      console.log("Get Selected Studnet Information")
+      console.log("Get Selected Studnet Information");
+
+      console.log(this.studetnsListService.getSelectedStudent());
 
      this.selectedStudentInformation = this.studetnsListService.getSelectedStudent();
   }
