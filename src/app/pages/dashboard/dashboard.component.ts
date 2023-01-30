@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 import { Student } from '../studetns-list/Student';
 
+export interface MathObject{
+  x: number;
+  y: number;
+}
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -20,7 +25,26 @@ export class DashboardComponent {
   };
 
 
+  
+  userObject = {
+    fName: 'Raju',
+    lName: 'Naga'
+  }
+
+
+  sumObject = {
+    x: 10,
+    y: 20
+  };
+
+  mathObject: MathObject = {
+    x: 10,
+    y: 20
+  }
+
+
+
   getStudnetPercentage(p: any){
-    return Number(p)/100;
+    return `${Number(p)/100}`;
   }
 }

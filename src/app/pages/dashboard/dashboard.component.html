@@ -1,4 +1,4 @@
-
+<!-- 
 <h3> Pipe's </h3>
 
 <p> RollNo: {{sudentList.id}} </p>
@@ -14,7 +14,29 @@ Currency
 
 <p> {{sudentList.fee |  number:'0.0-6'}}</p>
 
-<p> {{ getStudnetPercentage(sudentList.percentage) |  percent}}</p>
+<p> {{ getStudnetPercentage(sudentList.percentage) | percent}}</p>
 
 <p> {{ loginTime}}</p>
 <p> {{ loginTime | date: 'short'}}</p>
+
+ -->
+
+ <!-- Full Name : {{userObject.lName}} {{userObject.fName}}
+
+ Full Name {{userObject | getFullName}}
+ Full Name {{userObject | getFullName}}
+ Full Name {{userObject | getFullName}}
+ Full Name {{userObject | getFullName}} -->
+
+ <p>Full Name {{userObject | getFullName}}</p>
+ <p>Full Name {{userObject | getFullName: 'lowercase'}}</p>
+
+ <p> Sum : {{sumObject | findSum }}</p>
+
+ <h3> Math Operations</h3>
+ <p> 
+    Sum: {{mathObject | mathOperations: ' sum' }} </p>
+    <p>Multi: {{mathObject | mathOperations: 'multi' }}</p>
+    <p>Sub: {{mathObject | mathOperations: 'sub' }}</p>
+    <p> Div: {{mathObject | mathOperations: 'div' }}</p>
+

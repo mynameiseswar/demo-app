@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ProductsListRoutingModule } from './products-list-routing.module';
 import { ProductsListComponent } from './products-list.component';
+import { ShareModule } from 'src/app/utils/share/share.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { ProductsListComponent } from './products-list.component';
   ],
   imports: [
     CommonModule,
-    ProductsListRoutingModule
+    ProductsListRoutingModule,
+    ShareModule
   ]
 })
 export class ProductsListModule { }

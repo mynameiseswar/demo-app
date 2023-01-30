@@ -1,19 +1,20 @@
-<div class="card" style="width: 18rem;">
-    <img src="../../../assets/images/banner-2.jpeg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <!-- <a href="#" class="btn btn-primary">Details</a> -->
-      <button class="btn btn-danger"> Details </button>
-    </div>
-  </div>
 
-  <div class="card" style="width: 18rem;">
-    <img src="../../../assets/images/banner-2.jpeg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <!-- <a href="#" class="btn btn-primary">Details</a> -->
-      <button class="btn btn-danger"> Details </button>
-    </div>
-  </div>
+<button class="btn btn-primary" (click)="updateData()"> Update Data </button>
+
+
+<p> X Value is: {{mathObject.x}}</p>
+<p> Y Value is: {{mathObject.y}}</p>
+
+<div *ngIf="showElements">
+
+  <p>Sum: {{mathObject | mathOperations: ' sum' }} </p>
+  <p>Multi: {{mathObject | mathOperations: 'multi' }}</p>
+  <p>Sub: {{mathObject | mathOperations: 'sub' }}</p>
+  <p> Div: {{mathObject | mathOperations: 'div' }}</p>
+</div>
+
+
+  <button class="btn btn-primary" (click)="updateABCData()"> Update ABC Object </button>
+
+  <p> X Value is: {{abcObject.x}}</p>
+<p> Y Value is: {{abcObject.y}}</p>

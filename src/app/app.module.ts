@@ -13,7 +13,7 @@ import { UtillService } from './utill.service';
     AppComponent,
     ButtonComponent,
     ListComponent,
-    DetailsComponent
+    DetailsComponent,
   ],
   imports: [
     BrowserModule,
