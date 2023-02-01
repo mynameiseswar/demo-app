@@ -1,42 +1,114 @@
-<!-- 
-<h3> Pipe's </h3>
+<!-- <form action="" ngForm>
 
-<p> RollNo: {{sudentList.id}} </p>
-<p> Name: {{sudentList.name | lowercase}}</p>
-<p> Address: {{sudentList.address | uppercase}} </p>
+   <label> Fist Name </label>
+   <input type="text" ngModel name="firstname" placeholder="Enter First Name" />
+
+   <br />
+   <label> Last Name </label>
+   <input type="text" ngModel name="lastName" placeholder="Ener Last Name" />
+
+   <button class="btn btn-primary"> Submit</button>
+</form> -->
+
+<div class="row">
+   <div class="col-6">
+      <h5> User Registation</h5>
+      <form action="" #ref=ngForm (ngSubmit)="onSubmit(ref)">
+         <div class="mb-3">
+            <label class="form-label">First Name</label>
+            <input type="text" class="form-control" ngModel name="firstName" required minlength="3">
+            <!-- <div class="text-danger"
+               *ngIf="ref.controls['firstName']?.['touched'] && ref.controls['firstName']?.['errors']?.['required'] ">
+               First Name is required.
+            </div>
+
+            <div class="text-danger"
+               *ngIf="ref.controls['firstName']?.['touched'] && ref.controls['firstName']?.['errors']?.['minlength'] ">
+               First Name required min 3 letters.
+            </div> -->
+            <div class="text-danger">
+               <span
+                  *ngIf="ref.controls['firstName']?.['touched'] && ref.controls['firstName']?.['errors']?.['required'] ">
+                  First Name is required. </span>
+
+               <span
+                  *ngIf="ref.controls['firstName']?.['touched'] && ref.controls['firstName']?.['errors']?.['minlength'] ">
+                  First Name required min 3 letters. </span>
+            </div>
+
+         </div>
+         <div class="mb-3">
+            <label class="form-label">Last Name</label>
+            <input type="text" class="form-control" ngModel name="lastName" required minlength="3" maxlength="5">
+
+            <div class="text-danger">
+               <span
+                  *ngIf="ref.controls['lastName']?.['touched'] && ref.controls['lastName']?.['errors']?.['required'] ">
+                  Last Name is required. </span>
+
+               <span
+                  *ngIf="ref.controls['lastName']?.['touched'] && ref.controls['lastName']?.['errors']?.['minlength'] ">
+                  Last Name required min 3 letters. </span>
+
+               <span
+                  *ngIf="ref.controls['lastName']?.['touched'] && ref.controls['lastName']?.['errors']?.['maxlength'] ">
+                  Last Name required min 3 letters. </span>
+            </div>
+         </div>
+         <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" ngModel name="email" required email>
+            <div class="text-danger">
+               <span *ngIf="ref.controls['email']?.['touched'] && ref.controls['email']?.['errors']?.['required'] ">
+                  Email Name is required. </span>
+
+               <span *ngIf="ref.controls['email']?.['touched'] && ref.controls['email']?.['errors']?.['email'] ">
+                  Email format should be sample@domain.com </span>
+
+            </div>
+         </div>
+         <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="password" class="form-control" ngModel name="password" required minlength="6">
 
 
+            <div class="text-danger">
+               <span
+                  *ngIf="ref.controls['password']?.['touched'] && ref.controls['password']?.['errors']?.['required'] ">
+                  Password is required. </span>
 
-Currency 
+               <span
+                  *ngIf="ref.controls['password']?.['touched'] && ref.controls['password']?.['errors']?.['minlength'] ">
+                  Password need min length is 6. </span>
 
-<p> Fee: {{sudentList.fee | currency: 'EUR'}}</p>
+            </div>
+         </div>
+         <div class="mb-3">
 
+            <label>
+               <input type="radio" ngModel name="gender" value="M" /> Male
+            </label>
+            <label>
+               <input type="radio" ngModel name="gender" value="F" /> Female
+            </label>
+         </div>
 
-<p> {{sudentList.fee |  number:'0.0-6'}}</p>
+         <div class="mb-3">
 
-<p> {{ getStudnetPercentage(sudentList.percentage) | percent}}</p>
+            <label>
+               <input type="checkbox" ngModel name="tc" /> T & C
+            </label>
 
-<p> {{ loginTime}}</p>
-<p> {{ loginTime | date: 'short'}}</p>
+         </div>
+         <div class="">
+            <button class="btn btn-danger" (click)="onRestFrom(ref)"> Rest </button>
+            <button type="submit" class="btn btn-primary ms-2" [disabled]="ref['form']['status'] == 'INVALID'"> Submit
+            </button>
+         </div>
+      </form>
+   </div>
+</div>
 
- -->
+{{ref.value | json}}
 
- <!-- Full Name : {{userObject.lName}} {{userObject.fName}}
-
- Full Name {{userObject | getFullName}}
- Full Name {{userObject | getFullName}}
- Full Name {{userObject | getFullName}}
- Full Name {{userObject | getFullName}} -->
-
- <p>Full Name {{userObject | getFullName}}</p>
- <p>Full Name {{userObject | getFullName: 'lowercase'}}</p>
-
- <p> Sum : {{sumObject | findSum }}</p>
-
- <h3> Math Operations</h3>
- <p> 
-    Sum: {{mathObject | mathOperations: ' sum' }} </p>
-    <p>Multi: {{mathObject | mathOperations: 'multi' }}</p>
-    <p>Sub: {{mathObject | mathOperations: 'sub' }}</p>
-    <p> Div: {{mathObject | mathOperations: 'div' }}</p>
-
+<!-- [disabled]="ref['form']['status'] == 'INVALID'" -->

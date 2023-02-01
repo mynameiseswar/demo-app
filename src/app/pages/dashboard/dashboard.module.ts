@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard.component';
 import { GetFullNamePipe } from 'src/app/utils/get-full-name.pipe';
 import { FindSumPipe } from './find-sum.pipe';
 import { ShareModule } from 'src/app/utils/share/share.module';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ShareModule } from 'src/app/utils/share/share.module';
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    ShareModule
+    ShareModule,
+    FormsModule
   ]
 })
 export class DashboardModule { }
