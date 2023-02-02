@@ -1,1 +1,69 @@
-<p>settings works!</p>
+<h5> Reactive Form</h5>
+
+<form action="" [formGroup]="formGroupRef" (ngSubmit)="onUserLogin()">
+
+    <div class="mb-3">
+        <label class="form-label"> Email</label>
+        <input type="text" class="form-control" formControlName="email" placeholder="Enter Email" />
+        <div class="text-danger">
+            <span *ngIf="formGroupRef.get('email')?.touched && formGroupRef.get('email')?.hasError('required')"> Email
+                is
+                required.</span>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label"> Password</label>
+        <input type="password" class="form-control" formControlName="password" placeholder="Enter Password" />
+
+        <div class="text-danger">
+            <span *ngIf="formGroupRef.get('password')?.touched && formGroupRef.get('password')?.hasError('required')">
+                Password is Required.</span>
+            <span *ngIf="formGroupRef.get('password')?.touched && formGroupRef.get('password')?.hasError('minlength')">
+                Password minlength is 5 letters.</span>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label>
+            <input type="radio" formControlName="gender" value="male" /> Male
+        </label>
+        <label>
+            <input type="radio" formControlName="gender" value="female" /> Female
+        </label>
+    </div>
+    <div class="mb-3">
+        <select name="" formControlName="userType" id="">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+        </select>
+    </div>
+    <h4> Adress</h4>
+    <div class="" formGroupName="address">
+        <div class="mb-3">
+            <label> Address 1</label>
+            <input type="text" class="form-control" formControlName="address1" />
+        </div>
+        <div class="mb-3">
+            <label> Address 1</label>
+            <input type="text" class="form-control" formControlName="address2" />
+        </div>
+        <div class="mb-3">
+            <label> Pincode</label>
+            <input type="text" class="form-control" formControlName="pincode" />
+            <div class="text-danger">
+                <span *ngIf="formGroupRef.get('pincode')?.touched && formGroupRef.get('pincode')?.hasError('required')">
+                    Pincode is Required.</span>
+                <span
+                    *ngIf="formGroupRef.get('pincode')?.touched && formGroupRef.get('pincode')?.hasError('minlength')">
+                    Pincode minlength is 5 letters.</span>
+            </div>
+        </div>
+    </div>
+    <div class="mb-3">
+        <button class="btn btn-danger"> Cancel</button>
+        <button type="submit" class="btn btn-primary ms-2" [disabled]="formGroupRef.valid"> Login </button>
+    </div>
+
+</form>
+
+{{formGroupRef.value | json}}

@@ -16,7 +16,7 @@ export class DashboardComponent {
   onSubmit(ref: NgForm | any) {
     console.log('ON Form Submited.');
 
-    console.log(ref);
+    console.log(ref.value);
   }
 
   onRestFrom(ref: NgForm) {
