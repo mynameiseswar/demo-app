@@ -61,7 +61,7 @@
     </div>
     <div class="mb-3">
         <button class="btn btn-danger"> Cancel</button>
-        <button type="submit" class="btn btn-primary ms-2" [disabled]="formGroupRef.valid"> Login </button>
+        <button type="submit" class="btn btn-primary ms-2" [disabled]="!formGroupRef.valid"> Login </button>
     </div>
 
 </form>
