@@ -13,7 +13,7 @@ export class AppComponent {
   menuList: any = [
     {
       title: 'Dashboard',
-      url:'dashboard'
+      url: 'dashboard'
     },
     {
       title: 'Product List',
@@ -29,17 +29,17 @@ export class AppComponent {
     },
     {
       title: 'Settings',
-      url:'settings'
+      url: 'settings'
     }
   ];
 
   constructor(
     private router: Router
-  ){}
+  ) { }
 
-  onMenuClick(selectedMenu: any){
+  onMenuClick(selectedMenu: any) {
 
-    console.log(selectedMenu);
+    // console.log(selectedMenu);
 
     this.router.navigate([`/${selectedMenu.url}`])
 
@@ -51,7 +51,7 @@ export class AppComponent {
       this.router.navigate(['/product-list']);
     } */
 
-  
+
 
     /* switch(selectedMenu.toLocaleLowerCase()){
       case ('dashboard'):
