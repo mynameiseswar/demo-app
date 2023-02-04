@@ -51,17 +51,35 @@
             <label> Pincode</label>
             <input type="text" class="form-control" formControlName="pincode" />
             <div class="text-danger">
-                <span *ngIf="formGroupRef.get('pincode')?.touched && formGroupRef.get('pincode')?.hasError('required')">
+
+                <span
+                    *ngIf="formGroupRef.get('address')?.get('pincode')?.touched && formGroupRef.get('address')?.get('pincode')?.hasError('required')">
                     Pincode is Required.</span>
                 <span
-                    *ngIf="formGroupRef.get('pincode')?.touched && formGroupRef.get('pincode')?.hasError('minlength')">
-                    Pincode minlength is 5 letters.</span>
+                    *ngIf="formGroupRef.get('address')?.get('pincode')?.touched && formGroupRef.get('address')?.get('pincode')?.hasError('minlength')">
+                    Pincode minlength is 6 letters.</span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <h5>User's List <button class="btn btn-primary ms-2"> Aad User </button></h5>
+            <div class="row">
+                <div class="col-4">
+                    <label> User</label>
+                    <input type="text" formControlName="userName" class="form-control" />
+                </div>
+                <div class="col-4">
+                    <label> Location</label>
+                    <input type="text" formControlName="userLocation" class="form-control" />
+                </div>
+                <div class="col-4">
+                    <button class="btn btn-danger mt-4"> Delete User </button>
+                </div>
             </div>
         </div>
     </div>
     <div class="mb-3">
         <button class="btn btn-danger"> Cancel</button>
-        <button type="submit" class="btn btn-primary ms-2" [disabled]="!formGroupRef.valid"> Login </button>
+        <button type="submit" class="btn btn-primary ms-2"> Login </button>
     </div>
 
 </form>

@@ -34,7 +34,9 @@ export class SettingsComponent {
   })
 
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder) {
+    console.log(this.formGroupRef);
+  }
 
 
   onUserLogin() {
