@@ -16,47 +16,64 @@ export interface Users {
 })
 export class UsersListComponent implements OnInit {
 
-  usersList: any = [];
 
-  userDetails: any;
+  allProducts: any;
 
   constructor(
     private userListService: UserListService,
     private http: HttpClient
-  ) {
-    /* this.http.get('https://dummyjson.com/users').subscribe(
-      (data: any): void => {
-        console.log(data);
-        this.usersList = data.users;
-      }
-    ); */
-    this.userListService.getAllUsers().subscribe(
-      (data: any) => {
-        this.usersList = data.users;
-      }
-    );
-
-
-  }
+  ) { }
 
 
   ngOnInit(): void {
-    //  console.log(this.userListService.getAllUsers())
 
-    this.userListService.createNewUser().subscribe(
-      (createdUser) => {
-        console.log(createdUser);
+    let abc = new Promise((resolve, reject) => {
+
+      this.userListService.getAllProducts().subscribe(
+        (data) => {
+
+          resolve(data);
+        }
+      );
+    });
+
+
+    abc.then(
+      (data) => {
+        console.log(data);
+      }
+    ).catch(
+      (err) => {
+        console.log(err);
+      }
+    );
+
+
+
+
+
+
+  }
+
+  onAddProduct() {
+    let newProduct = {
+      "title": "Product-10000",
+      "price": 10,
+      "description": "A description",
+      "categoryId": 118,
+      "images": ["https://placeimg.com/640/480/any"]
+    };
+
+    this.userListService.addNewProduct(newProduct).subscribe(
+      (createdProduct) => {
+        console.log(createdProduct);
       }
     );
   }
 
-  onUserButtonClick(selectedUser: any) {
 
-    this.userListService.getSingleuser(selectedUser.id).subscribe(
-      (userInfo: any) => {
-        this.userDetails = userInfo;
-      }
-    );
-  }
+
+
+
 
 }

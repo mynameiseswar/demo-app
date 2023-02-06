@@ -44,8 +44,10 @@ usersList | json
             </table>
         </div> -->
 
-        <!-- <div class="row">
-            <div class="col-1 m-2" *ngFor="let user of usersList">
+
+        <!--  <div class="row">
+            <div class="col-1 m-2" *ngFor="let user of (usersList?.users | async)">
+                
                 <button class="btn btn-primary " (click)="onUserButtonClick(user)"> {{user.firstName}} </button>
             </div>
         </div>
@@ -54,5 +56,22 @@ usersList | json
 
         {{userDetails | json}} -->
 
+    </div>
+</div>
+
+<button class="btn btn-primary" (click)="onAddProduct()"> Add Product </button>
+
+
+<div class="row">
+    <div class="col m-4" *ngFor="let product of allProducts">
+        <!-- {{product | json}} -->
+        <div class="card" style="width: 18rem;">
+            <img [src]="product?.images[0]" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{product?.title}}</h5>
+                <p class="card-text">{{product?.description}}</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
     </div>
 </div>

@@ -60,21 +60,43 @@
                     Pincode minlength is 6 letters.</span>
             </div>
         </div>
-        <div class="mb-3">
-            <h5>User's List <button class="btn btn-primary ms-2"> Aad User </button></h5>
-            <div class="row">
-                <div class="col-4">
-                    <label> User</label>
-                    <input type="text" formControlName="userName" class="form-control" />
-                </div>
-                <div class="col-4">
-                    <label> Location</label>
-                    <input type="text" formControlName="userLocation" class="form-control" />
-                </div>
-                <div class="col-4">
-                    <button class="btn btn-danger mt-4"> Delete User </button>
+    </div>
+
+    <div class="mb-3">
+        <h5>User's List <button class="btn btn-primary ms-2" (click)="onAddNewuser()"> Aad User </button></h5>
+        <div class="" formArrayName="users">
+            <div class="" *ngFor="let userListFromRef of users.controls; let i =index;">
+                <div class="row" [formGroupName]="i">
+                    <div class="col-4">
+                        <label> User</label>
+                        <input type="text" formControlName="name" class="form-control" />
+                    </div>
+                    <div class="col-4">
+                        <label> Location</label>
+                        <input type="text" formControlName="location" class="form-control" />
+                    </div>
+                    <div class="col-4">
+                        <button class="btn btn-danger mt-4" (click)="deleteLesson(i)"> Delete User </button>
+                    </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="mb-3">
+        <h5> Hobbies <button class="btn btn-primary" (click)="onAddHobbies()"> Add Hobbies </button></h5>
+        <div class="" formArrayName="hobbies">
+            <div class="" *ngFor="let hobbie of hobbies.controls; let i = index">
+                <div class="row" [formGroupName]="i">
+                    <div class="col-8">
+                        <label> Hobbies</label>
+                        <input type="text" class="form-control" formControlName="name" />
+                    </div>
+                    <div class="col-4 mt-4">
+                        <button class="btn btn-danger" (click)="onHobbiesDelete(i)"> Delete </button>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
     <div class="mb-3">

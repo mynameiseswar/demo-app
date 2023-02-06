@@ -1,36 +1,23 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { catchError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserListService {
 
-  API_ENDPORINT = 'https://dummyjson.com';
   constructor(
-    private http: HttpClient
+    private httpClient: HttpClient
   ) { }
 
-  findSum(x: number, y: number) {
-    return x + y;
+
+  getAllProducts() {
+    return this.httpClient.get('https://api.escuelajs.co/api/v1/products/413');
   }
 
-  getAllUsers() {
-    return this.http.get(`${this.API_ENDPORINT}/users`);
+  addNewProduct(newProduct: any) {
+    return this.httpClient.post('https://api.escuelajs.co/api/v1/products', newProduct);
   }
 
-  getSingleuser(userId: number) {
-    return this.http.get(`${this.API_ENDPORINT}/users/${userId}`)
-  }
-
-  createNewUser() {
-    let userObject = JSON.stringify({
-      firstName: 'Rjau',
-      lastName: 'G',
-      age: 18
-    });
-
-    return this.http.post(`${this.API_ENDPORINT}/users/add`, userObject);
-
-  }
 }
