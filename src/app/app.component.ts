@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { ButtonEmitObject } from './shared/button/button.component';
+import { AppService } from './app.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,59 +7,57 @@ import { ButtonEmitObject } from './shared/button/button.component';
 })
 export class AppComponent {
 
-  seletedpage: string = 'dashboard';
-
-  menuList: any = [
-    {
-      title: 'Dashboard',
-      url: 'dashboard'
-    },
-    {
-      title: 'Product List',
-      url: 'product-list'
-    },
-    {
-      title: 'Users List',
-      url: 'users-list'
-    },
-    {
-      title: 'Students List',
-      url: 'students-list'
-    },
-    {
-      title: 'Settings',
-      url: 'settings'
-    }
-  ];
 
   constructor(
-    private router: Router
-  ) { }
+    private appService: AppService
+  ) {
+    this.table();
+  }
+  /*  onNavigateToPreviousPage() {
+     window.history.back();
+   } */
 
-  onMenuClick(selectedMenu: any) {
-
-    // console.log(selectedMenu);
-
-    this.router.navigate([`/${selectedMenu.url}`])
-
-    // this.seletedpage = selectedMenu.toLowerCase();
-
-    /* if(selectedMenu.toLocaleLowerCase() === 'dashboard'){
-      this.router.navigate(['/dashboard']);
-    }else if(selectedMenu.toLocaleLowerCase() === 'product list'){
-      this.router.navigate(['/product-list']);
-    } */
-
+  onSaveUserInformation() {
+    let userInfo = {
+      name: "raju",
+      address: 'HYD'
+    }
+    this.appService.setItem('userInfo', JSON.stringify(userInfo));
+  }
 
 
-    /* switch(selectedMenu.toLocaleLowerCase()){
-      case ('dashboard'):
-        this.router.navigate(['/dashboard']);
-        break;
-      case ('product list'):
-        this.router.navigate(['/product-list']);
-        break;
-    } */
+  onGetUserInformation() {
+    try {
+      let userInfo = JSON.parse(this.appService.getItem('userInfo') || '');
+      console.log(userInfo.name);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  onDeleteUserInformation() {
+    // sessionStorage.removeItem('userInfo');
+    //window.localStorage.removeItem('userInfo');
+    this.appService.removeItem('userInfo');
+  }
+
+
+
+  table() {
+    let x = 10;
+    /* 
+        for (let i = 1; i <= 10000; i++) {
+          console.log(`${i} X ${x} = ${i * x}`)
+        } */
+
+    /* setInterval(
+      () => {
+        for (let i = 1; i <= 10000; i++) {
+          console.log(`${i} X ${x} = ${i * x}`)
+        }
+      }, 1000
+    ); */
+
 
   }
 }

@@ -1,26 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ButtonComponent } from './shared/button/button.component';
-import { ListComponent } from './student/list/list.component';
-import { DetailsComponent } from './student/details/details.component';
-import { UtillService } from './utill.service';
+import { AppService } from './app.service';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ButtonComponent,
-    ListComponent,
-    DetailsComponent,
+    AppComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
+    BrowserModule
   ],
   providers: [
-    UtillService
+    AppService
   ],
   bootstrap: [AppComponent]
 })
