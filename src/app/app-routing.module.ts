@@ -14,13 +14,6 @@ const routes: Routes = [
             return import('./modules/base-app/base-app.module').then((m) => m.BaseAppModule)
         }
     },
-
-    {
-        path: 'dashboard',
-        loadChildren: () => {
-            return import('./modules/dashboard/dashboard.module').then((m) => m.DashboardModule)
-        }
-    },
     {
         path: 'login',
         loadChildren: () => {

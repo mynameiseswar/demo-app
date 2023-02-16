@@ -2,14 +2,14 @@
     <header>
         <app-header></app-header>
     </header>
-    <div class="continaer">
-        <div class="row">
-            <div class="col-2">
-                <app-menu></app-menu>
-            </div>
-            <div class="col-10">
-                Work Space
-            </div>
+    <hr />
+    <div class="row">
+        <div class="col-sm-4  col-lg-2">
+            <app-menu></app-menu>
+        </div>
+        <div class="col-sm-8  col-lg-10">
+            <router-outlet></router-outlet>
         </div>
     </div>
+    <div class="row"></div>
 </div>
