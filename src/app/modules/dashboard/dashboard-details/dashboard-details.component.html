@@ -1,0 +1,16 @@
+<div class="container-fluid">
+    <button class="btn btn-primary bt-sm " [routerLink]="'/app/dashboard/list'"> Back to List </button>
+
+    <div class="row">
+        <div class="col">
+            <p *ngFor="let keys of productKeys">
+                <span *ngIf="keys !== 'rating'">{{keys | uppercase}}: {{selectedProduct[keys]}}</span>
+            </p>
+        </div>
+        <div class="col">
+            <figure>
+                <img [src]="selectedProduct.image" height="300px" />
+            </figure>
+        </div>
+    </div>
+</div>

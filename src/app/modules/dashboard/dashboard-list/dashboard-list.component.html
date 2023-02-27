@@ -1,0 +1,36 @@
+<div class="container-fluid main__dashboard__container">
+    <div class="row">
+        <div class="col">
+            <h3> Products List</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h6> Filters</h6>
+            <div class="">
+                <button class="btn btn-primary btn-sm me-2" *ngFor="let category of categoriesList"
+                    (click)="filterProductsList(category)">
+                    {{category | uppercase}}</button>
+                <button class="btn btn-danger btn-sm" (click)="resetFilter()"> Reset </button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3" *ngFor="let product Of productsList">
+
+            <div class="card m-3" style="width: 18rem;">
+                <img [src]="product.image" class="card-img-top" height="200px" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-primary" [title]="product.title">{{product.title}}</h5>
+                    <h6 class="card-title text-secondary" [title]="product.category">Category : {{product.category}}
+                    </h6>
+                    <h6 class="card-title text-warning" [title]="product.title">Rating: {{product.rating.rate}}/
+                        {{product.rating.count}}
+                    </h6>
+                    <p class="card-text" [title]="product.description">{{product.description}}</p>
+                    <a (click)="navigateToDetailsPage(product)" calss="btn btn-primary">Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
