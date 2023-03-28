@@ -29,6 +29,8 @@ export class DashboardDetailsComponent implements OnInit {
     this.selectedProduct = this.dashboardService.getSelectedProdudt();
     this.productKeys = Object.keys(this.selectedProduct || {});
   }
+
+  
   ngOnInit(): void {
     if (this.selectedProduct == undefined) {
       this.navigationRouter.navigate(['/app/dashboard/list']);

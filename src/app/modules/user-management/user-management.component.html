@@ -1,1 +1,19 @@
 <p>user-management works!</p>
+<button class="btn btn-primary btn-sm" (click)="changName()"> Change Name </button>
+
+<br/>
+
+
+<app-message [userName]="userName">
+    <p class="text-danger" > Welcome to Hyd!</p>
+    <p #title> Welcome to Hyd!</p>
+    <p> Welcome to Hyd!</p>
+    <p> Welcome to Hyd!</p>
+    <p> Welcome to Hyd!</p>
+    <p> Welcome to Hyd!</p>
+    <p> Welcome to Hyd!</p>
+    <button> Click me </button>
+    <!-- Cusomte Componet -->
+    <app-menu></app-menu>
+</app-message>
+

@@ -8,7 +8,7 @@
         <div class="col">
             <h6> Filters</h6>
             <div class="">
-                <button class="btn btn-primary btn-sm me-2" *ngFor="let category of categoriesList"
+                <button class="btn btn-outline-primary btn-sm me-2" *ngFor="let category of categoriesList"
                     (click)="filterProductsList(category)">
                     {{category | uppercase}}</button>
                 <button class="btn btn-danger btn-sm" (click)="resetFilter()"> Reset </button>

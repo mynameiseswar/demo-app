@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { DashboardService } from '../dashboard.service';
 
 @Component({
@@ -7,8 +8,9 @@ import { DashboardService } from '../dashboard.service';
   templateUrl: './dashboard-list.component.html',
   styleUrls: ['./dashboard-list.component.scss']
 })
-export class DashboardListComponent {
+export class DashboardListComponent implements OnDestroy {
   productsList: any = [];
+  productList$: Subscription | any;
   defaultProductList: any = [];
   categoriesList: any = [];
   constructor(
@@ -17,8 +19,11 @@ export class DashboardListComponent {
   ) {
 
   }
+  ngOnDestroy(): void {
+    this.productList$.unsubscribe();
+  }
   ngOnInit(): void {
-    this.dashbaordService.getAllProducts().subscribe(
+    this.productList$ = this.dashbaordService.getAllProducts().subscribe(
       (productList) => {
         this.defaultProductList = productList;
         this.productsList = productList;
