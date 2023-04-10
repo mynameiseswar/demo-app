@@ -1,0 +1,9 @@
+<p>list works!</p>
+
+
+<p> Selected User : {{selectedUser}}</p>
+
+
+<ul class="list-group list-group-flush">
+    <li class="list-group-item" (click)="userSelect(username)" *ngFor="let username of usersList"> {{username}}</li>
+</ul>

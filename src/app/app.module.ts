@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingMoudle } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CanactiveService } from './canactive.service';
+import { AppService } from './app.service';
 
 
 @NgModule({
@@ -12,7 +14,10 @@ import { AppComponent } from './app.component';
     BrowserModule,
     AppRoutingMoudle
   ],
-  providers: [],
+  providers: [
+    CanactiveService,
+    AppService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

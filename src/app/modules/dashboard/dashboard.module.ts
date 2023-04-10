@@ -7,13 +7,15 @@ import { DashboardService } from './dashboard.service';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardDetailsComponent } from './dashboard-details/dashboard-details.component';
 import { DashboardListComponent } from './dashboard-list/dashboard-list.component';
+import { ListComponent } from './list/list.component';
 
 
 @NgModule({
   declarations: [
     DashboardComponent,
     DashboardDetailsComponent,
-    DashboardListComponent
+    DashboardListComponent,
+    ListComponent
   ],
   imports: [
     CommonModule,

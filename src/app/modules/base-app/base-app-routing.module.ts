@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BaseAppComponent } from './base-app.component';
+import { CanactiveService } from 'src/app/canactive.service';
 
 const routes: Routes = [
   {
@@ -18,6 +19,13 @@ const routes: Routes = [
       {
         path: 'settings',
         loadChildren: () => import('../settings/settings.module').then((m) => m.SettingsModule)
+      },
+      {
+        path: 'feedback',
+        loadChildren: () => import('../feedback/feedback.module').then((m)=> m.FeedbackModule),
+        canActivate: [
+          CanactiveService
+        ]
       }
     ]
   }
