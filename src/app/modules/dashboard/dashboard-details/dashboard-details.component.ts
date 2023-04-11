@@ -15,25 +15,48 @@ export class DashboardDetailsComponent implements OnInit {
   productKeys: any = [];
 
   constructor(
-    private dashboardService: DashboardService,
+    public dashboardService: DashboardService,
     private router: ActivatedRoute,
     private navigationRouter: Router
   ) {
 
-    let id$ = this.router.paramMap.pipe(
+    this.router.params.subscribe(
+      (data: any) =>{
+        if(data && data.productId){
+       
+        const produtId = data.productId || 0;
+
+        this.dashboardService.getProductDetailsById(produtId).subscribe(
+          (data) =>{
+            console.log(data);
+            this.selectedProduct = data;
+            this.productKeys = Object.keys(this.selectedProduct || {});
+
+            if (this.selectedProduct == undefined) {
+              this.navigationRouter.navigate(['/app/dashboard/list']);
+            }
+          }
+        );
+      }
+      }
+     );
+    /* let id$ = this.router.paramMap.pipe(
       map(
         (params: ParamMap) => params.get('id')
       )
     );
-    console.log(id$);
-    this.selectedProduct = this.dashboardService.getSelectedProdudt();
+    console.log(id$); */
+
+    /* this.selectedProduct = this.dashboardService.getSelectedProdudt();
+    console.log(this.selectedProduct);
     this.productKeys = Object.keys(this.selectedProduct || {});
+    if (this.selectedProduct == undefined) {
+      this.navigationRouter.navigate(['/app/dashboard/list']);
+    } */
   }
 
   
   ngOnInit(): void {
-    if (this.selectedProduct == undefined) {
-      this.navigationRouter.navigate(['/app/dashboard/list']);
-    }
+    
   }
 }

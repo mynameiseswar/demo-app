@@ -19,7 +19,7 @@ const routes: Routes = [
         component: DashboardListComponent
       },
       {
-        path: 'details/:id',
+        path: 'details/:productId',
         component: DashboardDetailsComponent
       }
     ]
